@@ -1,5 +1,7 @@
 package com.werureo.realmstatusforwow.models
 
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
 import java.util.*
 
 ////////////////////////////////////////////////////////////
@@ -34,22 +36,18 @@ enum class ZoneStatus(val type: Int)
 
 ////////////////////////////////////////////////////////////
 
-class PvPZone(val area: Int, var controllingFaction: Faction, var status: ZoneStatus, var next: Date)
+data class PvPZone(val area: Int, var controllingFaction: Faction, var status: ZoneStatus, var next: Date)
 
 ////////////////////////////////////////////////////////////
 
-class Realm
-{
-    val name: String = ""
-    val slug: String = ""
-    val type: RealmType = RealmType.PVP
-    var status: Boolean = true
-    var queue: Boolean = false
-    var population: String = ""
-    val battlegroup: String = ""
-    val locale: Locale = Locale.ENGLISH
-    val timezone: TimeZone = TimeZone.getDefault()
-    var wintergrasp: PvPZone = PvPZone(0, Faction.NEUTRAL, ZoneStatus.UNKNOWN, Date())
-    var tolBarad: PvPZone = PvPZone(0, Faction.NEUTRAL, ZoneStatus.UNKNOWN, Date())
-    var connectedRealms: Array<String>? = null
-}
+data class Realm(@SerializedName("name")                @Expose val name: String = "",
+                 @SerializedName("slug")                @Expose val slug: String = "",
+                 @SerializedName("type")                @Expose val type: RealmType = RealmType.PVP,
+                 @SerializedName("status")              @Expose var status: Boolean = true,
+                 @SerializedName("queue")               @Expose var queue: Boolean = false,
+                 @SerializedName("population")          @Expose var population: String = "",
+                 @SerializedName("battlegroup")         @Expose val battlegroup: String = "",
+                 @SerializedName("locale")              @Expose val locale: String = "",
+                 @SerializedName("timezone")            @Expose val timezone: String = "",
+                 @SerializedName("connected_realms")    @Expose var connectedRealms: List<String>? = null
+)

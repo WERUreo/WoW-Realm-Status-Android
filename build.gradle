@@ -1,17 +1,24 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.0.4'
+    ext.kotlin_version = '1.1.2-3'
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:2.3.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
+
+    // Support
+    def androidSupportVersion = "25.3.1"
+    ext.supportAppCompat = "com.android.support:appcompat-v7:$androidSupportVersion"
+    ext.supportRecyclerView = "com.android.support:recyclerview-v7:$androidSupportVersion"
+    ext.supportv4 = "com.android.support:support-v4:$androidSupportVersion"
+
+    // Networking
+    ext.retrofit = "com.squareup.retrofit2:retrofit:2.2.0"
+    ext.retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:2.2.0"
 }
 
 allprojects {

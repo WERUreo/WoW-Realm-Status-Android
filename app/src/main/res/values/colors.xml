@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#1A2D3B</color>
+    <color name="colorPrimaryDark">#1A2D3B</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Alternating row colors -->
+    <color name="colorRowBackground1">#1F3345</color>
+    <color name="colorRowBackground2">#263D4F</color>
+
+    <!-- Realm status colors -->
+    <color name="colorOnline">#4DB04F</color>
+    <color name="colorOffline">#F54236</color>
 </resources>
