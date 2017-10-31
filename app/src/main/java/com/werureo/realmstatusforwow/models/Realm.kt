@@ -40,7 +40,8 @@ data class PvPZone(val area: Int, var controllingFaction: Faction, var status: Z
 
 ////////////////////////////////////////////////////////////
 
-data class Realm(@SerializedName("name")                @Expose val name: String = "",
+data class Realm(
+        @SerializedName("name")                @Expose val name: String = "",
                  @SerializedName("slug")                @Expose val slug: String = "",
                  @SerializedName("type")                @Expose val type: RealmType = RealmType.PVP,
                  @SerializedName("status")              @Expose var status: Boolean = true,

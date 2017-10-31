@@ -17,7 +17,7 @@ object RetrofitClient
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-    private fun getApiService() = getRetrofitInstance().create(BattleNetService::class.java)
+    private fun getApiService() = getRetrofitInstance().create(BattleNet::class.java)
 
     fun getRealms(completion: (List<Realm>?) -> Unit)
     {
